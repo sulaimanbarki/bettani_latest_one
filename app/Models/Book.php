@@ -144,4 +144,13 @@ class Book extends Model  implements HasMedia
             ->height(452)
             ->performOnCollections('books');
     }
+
+    public function is_free()
+    {
+        if ($this->status == 4) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

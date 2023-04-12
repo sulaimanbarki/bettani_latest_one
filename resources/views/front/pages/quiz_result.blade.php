@@ -152,7 +152,7 @@
                                                         OBTAINED MARKS
                                                     </th>
                                                     <th>
-                                                        @if($book->payment()==1)
+                                                        @if($book->payment()==1 || $book->is_free())
                                                         {{ $quiz->marks }}
                                                         @else 
                                                         <span class="text-danger">Please buy book for online result</span>
@@ -165,7 +165,7 @@
                                                         RESULT
                                                     </th>
                                                     <th>
-                                                        @if($book->payment()==1)
+                                                        @if($book->payment()==1 || $book->is_free())
                                                         {{ $result }} (above or equal 50% pass)
                                                         @else 
                                                         <span class="text-danger">Please buy book for online result</span>

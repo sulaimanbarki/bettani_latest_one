@@ -31,7 +31,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
          
-        URL::forceScheme('https');
+        // URL::forceScheme('https');
+
+        // apply force scheme when app is in production
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
     
         Schema::defaultStringLength(191);
         Paginator::useBootstrap();
